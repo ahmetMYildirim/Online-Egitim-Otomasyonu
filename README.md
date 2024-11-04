@@ -11,7 +11,7 @@
 ### Öğrenci Gereksinimleri
 | Gereksinim                      | Açıklama |
 |---------------------------------|----------|
-| Kurs Kataloğunu Görüntüleme     | Öğrenci, tüm kursların bulunduğu kataloğu görüntüleyebilir. |
+| Kursları Görüntüleme            | Öğrenci, tüm kursları görüntüleyebilir. |
 | Kurs Kaydı Yapma                | Öğrenci, ilgilendiği kurslara kayıt olabilir. |
 | Satın Alma İşlemleri            | Öğrenci, kurs satın alma işlemlerini gerçekleştirebilir. |
 | İçeriklere Erişim               | Öğrenci, satın aldığı veya kayıt olduğu kursların içeriklerine erişebilir. |

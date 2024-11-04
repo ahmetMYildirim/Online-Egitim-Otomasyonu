@@ -1,9 +1,11 @@
 # BMÜ329 Veri Tabanı Sistemleri Dersi Dönem Projesi Gereksinimleri ve E-R Diyagramı
 ## Proje Adı: Online Egitim Sistemi
-### Proje Ekibindeki Kişiler
+### Proje Ekibindeki Kişiler:
 - 220260023 - Abdulkadir Karataş
 - 220260065 - Ömer Erginoğuz
 - 220260037 - Ahmet Melik Yıldırım
+
+---
 
 ## Gereksinimler
 ### Öğrenci Gereksinimleri

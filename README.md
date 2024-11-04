@@ -38,31 +38,34 @@
 ---
 
 ## Varlık ve İlişkiler
-| Varlık         | Özellikler                                                                 | İlişkiler                                                                                               |
-| Users          | id, Name, Email, Password, Role, Reg_Date                                  | -Sahip Olur (Courses): Bir eğitmen birden fazla kursa sahip olabilir.(1-N) <br> -Yapar (Purchases) : Bir kullanıcı birden fazla satın alım yapabilir.(1-N) <br> - Sahiptir (Enrollement): Bir kullanıcı birden fazla kursa kaydolabilir (1:N) <br> - Alır (Certificates): Bir öğrenci birden fazla sertifikaya sahip olabilir (1:N) |
-| Courses        | id, name, descrpition, instructor_id                                       | -İçerir (Course Content): Bir kurs birden fazla içeriğe sahip olabilir (1:N) <br> - İçerir (Category): Bir kategori birden fazla kurs içerir (1:N) <br> - İçerir (SubCategories): Bir alt kategori birden fazla kurs içerir (1:N) <br> -Kaydedilir (Enrollments): Bir kursa birden fazla öğrenci kaydolabilir (1:N) <br> - Satılır (Satın Alma): Bir kurs birden fazla kez satın alınabilir (1:N) |
-| Enrollments    | id, student_id, course_id, enrollment_date                                 | - Bağlantı (Users ve Courses): Öğrencilerin kursa kaydolmasını sağlar (N:M) |
-| Purchases      | id, student_id, course_id, payment_amount, payment_date                   | - Bağlantı (Users ve Courses): Kullanıcıların kurs satın almasını sağlar (N:M) |
-| Certificates   | id, student_id, course_id, certificate_id                                 | - Verilir (Courses): Bir kurs için birden fazla sertifika verilebilir (1:N) <br> - Alınır (Users): Bir öğrenci birden fazla sertifika alabilir (1:N) |
-| Categories     | id, name, description                                                     | - İçerir (SubCategories): Bir kategori, birden fazla alt kategoriye sahip olabilir (1:N) |
-| SubCategories  | id, categories_id, name, description                                      | - İçerir (Courses): Bir alt kategori, birden fazla kurs içerir (1:N) |
-| Course Content | id, course_id, title, file_path, type                                     | - Bağlıdır (Courses): Bir kursa birden fazla içerik eklenebilir (1:N) |
-| Course Reviews | id, course_id, student_id, rating, review, rev_date                       | - Yapılır (Users): Bir kullanıcı birden fazla değerlendirme yapabilir (1:N) <br> - Alır (Courses): Bir kurs birden fazla kez değerlendirilebilir (1:N) |
+
+| Varlık         | Özellikler                                                                 | İlişkiler                                                                                                                                                                                                                                                                                                       |
+|----------------|---------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Users**          | `id`, `Name`, `Email`, `Password`, `Role`, `Reg_Date`                     | - Sahip Olur (Courses): Bir eğitmen birden fazla kursa sahip olabilir. (1-N) <br> - Yapar (Purchases) : Bir kullanıcı birden fazla satın alım yapabilir. (1-N) <br> - Sahiptir (Enrollment): Bir kullanıcı birden fazla kursa kaydolabilir. (1:N) <br> - Alır (Certificates): Bir öğrenci birden fazla sertifikaya sahip olabilir. (1:N) |
+| **Courses**        | `id`, `name`, `description`, `instructor_id`                             | - İçerir (Course Content): Bir kurs birden fazla içeriğe sahip olabilir. (1:N) <br> - İçerir (Category): Bir kategori birden fazla kurs içerir. (1:N) <br> - İçerir (SubCategories): Bir alt kategori birden fazla kurs içerir. (1:N) <br> - Kaydedilir (Enrollments): Bir kursa birden fazla öğrenci kaydolabilir. (1:N) <br> - Satılır (Satın Alma): Bir kurs birden fazla kez satın alınabilir. (1:N) |
+| **Enrollments**    | `id`, `student_id`, `course_id`, `enrollment_date`                       | - Bağlantı (Users ve Courses): Öğrencilerin kursa kaydolmasını sağlar. (N:M)                                                                                                                                                                                             |
+| **Purchases**      | `id`, `student_id`, `course_id`, `payment_amount`, `payment_date`       | - Bağlantı (Users ve Courses): Kullanıcıların kurs satın almasını sağlar. (N:M)                                                                                                                                                                                          |
+| **Certificates**   | `id`, `student_id`, `course_id`, `certificate_id`                        | - Verilir (Courses): Bir kurs için birden fazla sertifika verilebilir. (1:N) <br> - Alınır (Users): Bir öğrenci birden fazla sertifika alabilir. (1:N)                                                                                                                   |
+| **Categories**     | `id`, `name`, `description`                                             | - İçerir (SubCategories): Bir kategori, birden fazla alt kategoriye sahip olabilir. (1:N)                                                                                                                                                                                |
+| **SubCategories**  | `id`, `categories_id`, `name`, `description`                            | - İçerir (Courses): Bir alt kategori, birden fazla kurs içerir. (1:N)                                                                                                                                                                                                    |
+| **Course Content** | `id`, `course_id`, `title`, `file_path`, `type`                          | - Bağlıdır (Courses): Bir kursa birden fazla içerik eklenebilir. (1:N)                                                                                                                                                                                                   |
+| **Course Reviews** | `id`, `course_id`, `student_id`, `rating`, `review`, `rev_date`          | - Yapılır (Users): Bir kullanıcı birden fazla değerlendirme yapabilir. (1:N) <br> - Alır (Courses): Bir kurs birden fazla kez değerlendirilebilir. (1:N)                                                                                                                 |
 
 ---
 
-##İlişki Özeti Tablosu
-| Tablo 1  | Tablo 2 | Arasındaki İlişki |
-| Users    | Courses | 1-N               |
-| Users    | Certificates | 1-N          |
-| Users    | Enrollments | 1-N           |
-| Users    | Course Reviews | 1-N        |
-| Courses  | Course Reviews | 1-N        |
-| Courses  | Course Content | 1-N        |
-| Courses  | Purchases | 1-N             |
-| Courses  | Certificates | 1-1          |
-| Courses  | Enrollments | 1-N           |
-| Categories | Courses | 1-N             |
-| Categories | SubCategories | 1-N       |
-| SubCategories | Courses | 1-N          |
+## İlişki Özeti Tablosu
 
+| Tablo 1      | Tablo 2         | Arasındaki İlişki |
+|--------------|------------------|--------------------|
+| Users        | Courses          | 1-N               |
+| Users        | Certificates     | 1-N               |
+| Users        | Enrollments      | 1-N               |
+| Users        | Course Reviews   | 1-N               |
+| Courses      | Course Reviews   | 1-N               |
+| Courses      | Course Content   | 1-N               |
+| Courses      | Purchases        | 1-N               |
+| Courses      | Certificates     | 1-1               |
+| Courses      | Enrollments      | 1-N               |
+| Categories   | Courses          | 1-N               |
+| Categories   | SubCategories    | 1-N               |
+| SubCategories | Courses         | 1-N               |

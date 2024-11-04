@@ -72,3 +72,11 @@
 | Categories   | Courses          | 1-N               |
 | Categories   | SubCategories    | 1-N               |
 | SubCategories | Courses         | 1-N               |
+
+
+---
+
+## E-R Diyagramı
+![](./OnlineEduDiagram.png)
+
+---

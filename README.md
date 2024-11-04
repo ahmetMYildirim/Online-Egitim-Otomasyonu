@@ -39,8 +39,6 @@
 
 ## Varlık ve İlişkiler
 
-## Varlık ve İlişkiler
-
 | Varlık             | Özellikler                                                  | İlişkiler                                                                                                                                                                                                                                        |
 |--------------------|-------------------------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | **Users**          | `id`, `Name`, `Email`, `Password`, `Role`, `Reg_Date`       | - Sahip Olur (Courses): Bir eğitmen birden fazla kursa sahip olabilir. (1-N) <br> - Yapar (Purchases): Bir kullanıcı birden fazla satın alım yapabilir. (1-N) <br> - Sahiptir (Enrollment): Bir kullanıcı birden fazla kursa kaydolabilir. (1:N) <br> - Alır (Certificates): Bir öğrenci birden fazla sertifikaya sahip olabilir. (1:N) |

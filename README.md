@@ -1,4 +1,4 @@
-# Proje Adı: Online Egitim Otomasyonu
+Online Egitim Otomasyonu
 ### Proje Ekibindeki Kişiler:
 - 220260023 - Abdulkadir Karataş
 - 220260065 - Ömer Erginoğuz

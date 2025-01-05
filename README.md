@@ -76,6 +76,6 @@ Online Egitim Otomasyonu
 ---
 
 ## E-R Diyagramı
-![](./OnlineEduDiagram.png)
+![](./Ekran görüntüsü 2025-01-05 164110.png)
 
 ---
